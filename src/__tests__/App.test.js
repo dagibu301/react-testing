@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event';
-import App from './App';
+import App from '../App';
 
 describe('App component', () => {
   it('should display 6 products', async () => {
