@@ -1,8 +1,8 @@
 import './styles.css';
 import ProductList from './components/ProductList';
 import { useState } from 'react';
-import UserForm from './UserForm';
-import UserList from './UserList';
+import UserForm from './components/UserForm';
+import UserList from './components/UserList';
 
 export default function App() {
   const [users, setUsers] = useState([]);
