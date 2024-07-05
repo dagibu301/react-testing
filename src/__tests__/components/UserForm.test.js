@@ -14,7 +14,7 @@ describe('User Form Component', () => {
         expect(button).toBeInTheDocument;
     })
 
-    it('should call onUserAdd when form is submitted', () => {
+    it('should call onUserAdd when form is submitted', async () => {
         const mock = jest.fn();
 
         render(<UserForm onUserAdd={mock} />);
@@ -22,12 +22,12 @@ describe('User Form Component', () => {
         const nameInput = screen.getByRole('textbox', { name: /name/i });
         const emailInput = screen.getByRole('textbox', { name: /email/i });
 
-        user.click(nameInput);
-        user.keyboard('John Doe');
+        await user.click(nameInput);
+        await user.keyboard('John Doe');
 
 
-        user.click(emailInput);
-        user.keyboard('john@john.com');
+        await user.click(emailInput);
+        await user.keyboard('john@john.com');
 
 
         const button = screen.getByRole('button')
