@@ -28,5 +28,12 @@ describe('User List component', () => {
         render(<UserList users={mockUsers} />);
         // screen.logTestingPlaygroundURL();
 
+        for (const user of mockUsers) {
+            const name = screen.getByRole('cell', { name: user.name });
+            const email = screen.getByRole('cell', { name: user.email });
+
+            expect(name).toBeInTheDocument();
+            expect(email).toBeInTheDocument();
+        }
     })
 })
